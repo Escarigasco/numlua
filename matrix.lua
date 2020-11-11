@@ -12,7 +12,7 @@ local get, set, size = matrix.get, matrix.set, matrix.size
 local concat, shape = matrix.concat, matrix.shape
 local type, eps = numlua.type, mathx.eps
 
-local unpack, assert, ipairs = unpack, assert, ipairs
+local unpack, assert, ipairs = table.unpack, assert, ipairs
 local setmetatable, select = setmetatable, select
 local floor, max = math.floor, math.max
 
@@ -371,4 +371,3 @@ function matrix.lm (a, b, svd)
   local pvalue = 1 - stat.pf(F, rank - 1, df)
   return {coef = coef, rss = rss, df = df, F = F, pvalue =  pvalue}
 end
-
